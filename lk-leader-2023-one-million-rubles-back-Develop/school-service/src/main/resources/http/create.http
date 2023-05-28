@@ -1,0 +1,81 @@
+POST localhost:8083/api/helper/school
+Content-Type: application/json
+
+{
+  "name": "Детская музыкальная школа имени В.И.Мурадели",
+  "address": "Ул. Пречистенка, д. 32/1, стр. 1 ",
+  "phoneNumber": "+7 (495) 637-37-83",
+  "email": "muradeli@culture.mos.ru",
+  "imageUrls": [
+    "url1",
+    "url2"
+  ],
+  "siteUrl": "https://muradeli.music.mos.ru/",
+  "description": "ГБУДО Г. МОСКВЫ «ДЕТСКАЯ МУЗЫКАЛЬНАЯ ШКОЛА ИМЕНИ В.И. МУРАДЕЛИ»",
+  "coordinate": "55.740686, 37.590509",
+  "county": "ЦАО",
+  "district": "Хамовники район",
+  "artDirections": [
+    {
+      "name": "Изобразительное искусство",
+      "imageUrl": "imageUrl",
+      "subDirections": [
+        "Акварель",
+        "Масло"
+      ]
+    }
+  ],
+  "events": [],
+  "reviews": {}
+}
+
+###
+
+POST localhost:8083/api/helper/event?school_id=6472736e9576a47bcd77af5c
+Content-Type: application/json
+
+{
+  "name" : "Концерт",
+  "description" : "Крутой концерт",
+  "imageUrl" : "url",
+  "date": "28 мая 2023",
+  "time" : "17:30",
+  "address" : "г Москва, Пушкина 32"
+}
+
+###
+
+POST localhost:8082/api/helper/school
+Content-Type: application/json
+
+{
+  "name": "Детская музыкальная школа имени В.И.Мурадели",
+  "address": "Ул. Пречистенка, д. 32/1, стр. 1 ",
+  "phoneNumber": "+7 (495) 637-37-83",
+  "email": "muradeli@culture.mos.ru",
+  "imageUrls": [
+    "url1",
+    "url2"
+  ],
+  "siteUrl": "https://muradeli.music.mos.ru/",
+  "description": "ГБУДО Г. МОСКВЫ «ДЕТСКАЯ МУЗЫКАЛЬНАЯ ШКОЛА ИМЕНИ В.И. МУРАДЕЛИ»",
+  "coordinate": "55.740686, 37.590509",
+  "county": "ЦАО",
+  "district": "Хамовники район",
+  "artDirections": [
+    {
+      "name": "Изобразительное искусство",
+      "imageUrl": "imageUrl",
+      "subDirections": [
+        "Акварель",
+        "Масло"
+      ]
+    }
+  ],
+  "events": [],
+  "reviews": {}
+}
+
+###
+
+POST localhost:8082/api/helper/school/art?school=646f880255eee555bf0eac94&artDir=Изобразительное%20искусство&subDirs=Акварель&subDirs=Масло

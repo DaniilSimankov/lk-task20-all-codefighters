@@ -1,0 +1,48 @@
+POST localhost:8080/api/art_direction
+
+{
+  "abbreviatedTitle": "AD",
+  "name": "Art Direction",
+  "imageUrl": "https://example.com/art_direction_image",
+  "subDirections": ["SubDirection1", "SubDirection2"]
+}
+
+###
+POST localhost:8080/api/student
+Content-Type: application/json
+
+{
+  "name": "John",
+  "surname": "Doe",
+  "artDirections": [
+
+  ]
+}
+
+###
+
+POST localhost:8080/api/direction
+Content-Type: application/json
+
+{
+  "abbreviatedTitle": "TT",
+  "name": "Ta Tu",
+  "imageUrl": "https://example.com/art_direction_image",
+  "subDirections": ["SubDirection1", "SubDirection2"]
+}
+
+###
+
+POST localhost:8080/api/student/direction?id=646c87d1862e956fa20b63f5&ad=6468ad3512c99b0e72d4067f
+
+###
+
+GET localhost:8081/api/direction?id=646c87d1862e956fa20b63f5
+
+###
+
+GET http://178.170.193.218:8080/api/direction?id=646c87d1862e956fa20b63f5
+
+###
+
+POST localhost:8080/api/test/result?id_test=646a29407a27170069b29896&id_user=646a29407a27170069b29896&result=0.7

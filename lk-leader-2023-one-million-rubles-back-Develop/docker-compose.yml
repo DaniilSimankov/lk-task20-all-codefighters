@@ -1,0 +1,114 @@
+---
+version: '3.7'
+services:
+
+  ## Eureka Server
+  discovery-server:
+    image: simankovd/discovery-server:latest
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+
+  api-gateway:
+    image: simankovd/api-gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+#      - LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY= TRACE
+    depends_on:
+      - discovery-server
+
+  auth-service:
+    image: simankovd/auth-service
+    container_name: auth-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - api-gateway
+
+  school-service:
+    image: simankovd/school-service
+    container_name: school-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - api-gateway
+      - auth-service
+
+  news-service:
+    image: simankovd/news-service
+    container_name: news-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - api-gateway
+
+  education-service:
+    image: simankovd/education-service
+    container_name: education-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - api-gateway
+      - auth-service
+
+  art-direction-service:
+    image: simankovd/art-direction-service
+    container_name: art-direction-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - api-gateway
+
+  obs-cloud-service:
+    image: simankovd/obs-cloud-service
+    container_name: obs-cloud-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - api-gateway
+      - auth-service
+
+  user-service:
+    image: simankovd/user-service
+    container_name: user-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - api-gateway
+      - auth-service
+
+  video-course-service:
+    image: simankovd/video-course-service
+    container_name: video-course-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - api-gateway
+      - auth-service
+
+
+
+

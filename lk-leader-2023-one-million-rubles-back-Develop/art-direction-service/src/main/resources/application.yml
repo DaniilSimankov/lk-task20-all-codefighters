@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      uri: "mongodb://root:Agsougv_APO2124@178.170.193.218:27017/lk-leaders-hack?authMechanism=SCRAM-SHA-1&authSource=admin"
+  application:
+    name: art-direction-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+server:
+  port: 0
+

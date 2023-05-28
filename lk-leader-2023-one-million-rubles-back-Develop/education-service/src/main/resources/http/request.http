@@ -1,0 +1,23 @@
+GET localhost:8080/api/test
+Content-Type: application/json
+
+{
+  "studentId": "646c87d1862e956fa20b63f5",
+  "artDirection": "art"
+}
+
+###
+
+GET localhost:8080/api/test/6471fec11c850c0fdeabcdae
+
+###
+
+POST localhost:8080/api/test/result
+Content-Type: application/json
+
+{
+  "studentId": "646c87d1862e956fa20b63f5",
+  "testId": "6471fec11c850c0fdeabcdae",
+  "ball" : 100
+}
+

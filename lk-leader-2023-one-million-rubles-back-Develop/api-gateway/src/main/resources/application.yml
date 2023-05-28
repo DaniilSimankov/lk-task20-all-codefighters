@@ -1,0 +1,74 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: education-service
+          uri: lb://education-service
+          predicates:
+            - Path=/api/education/**
+          filters:
+            - AuthenticationFilter
+
+        - id: news-service
+          uri: lb://news-service
+          predicates:
+            - Path=/api/news/**
+          filters:
+            - AuthenticationFilter
+
+        - id: obs-cloud-service
+          uri: lb://obs-cloud-service
+          predicates:
+            - Path=/api/obs/**
+          filters:
+            - AuthenticationFilter
+
+        - id: video-course-service
+          uri: lb://video-course-service
+          predicates:
+            - Path=/api/video-course/**
+          filters:
+            - AuthenticationFilter
+
+        - id: auth-server
+          uri: lb://auth-server
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - AuthenticationFilter
+
+        - id: school-service
+          uri: lb://school-service
+          predicates:
+            - Path=/api/school/**
+          filters:
+            - AuthenticationFilter
+
+        - id: art-direction-service
+          uri: lb://art-direction-service
+          predicates:
+            - Path=/api/art-direction/**
+          filters:
+            - AuthenticationFilter
+
+        - id: administration-service
+          uri: lb://administration-service
+          predicates:
+            - Path=/api/administration-service/**
+          filters:
+            - AuthenticationFilter
+logging:
+  level:
+    root: info
+    org.springframework.cloud.gateway.route.RouteDefinitionLocator: info
+    org.springframework.cloud.gateway: trace
+
+server:
+  port: 8080

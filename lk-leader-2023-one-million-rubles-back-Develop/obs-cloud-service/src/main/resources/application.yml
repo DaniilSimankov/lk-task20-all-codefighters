@@ -1,0 +1,15 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+  application:
+    name: obs-cloud-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:password@localhost:8761/eureka
+
+server:
+  port: 0

@@ -1,0 +1,48 @@
+GET http://178.170.193.218:8080/api/school
+
+###
+
+GET localhost:8080/api/news?abbr=FAS
+
+###
+
+GET localhost:8082//api/school/646fcf077d32867b15f44f11
+
+###
+
+GET localhost:8082//api/school/county?value=ЦАО
+
+###
+
+GET localhost:8082//api/school/district?value=Хамовники%20район
+
+###
+
+GET localhost:8082//api/school/artDirection?value=Музыкальное%20искусство
+
+###
+
+GET localhost:8082//api/school/subDirection?value=Акварель&value=Масло
+
+###
+
+GET localhost:8082//api/school/coordinate?value=55.740686,%2037.590509
+
+###
+
+GET localhost:8082//api/school/name?value=школа
+
+###
+
+
+POST localhost:8082//api/school/646fd610689fa858977e1540/reviews
+Content-Type: application/json
+
+{
+  "studentId": "id5",
+  "score": -2
+}
+
+###
+
+

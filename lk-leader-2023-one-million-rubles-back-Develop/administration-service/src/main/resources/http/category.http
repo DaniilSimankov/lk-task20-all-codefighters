@@ -1,0 +1,7 @@
+GET localhost:8080/api/test?art_direction=Пение&student_id=646c87d1862e956fa20b63f5
+
+###
+
+GET localhost:8080/api/test?id=646a241992cba9357f6dda35
+
+##

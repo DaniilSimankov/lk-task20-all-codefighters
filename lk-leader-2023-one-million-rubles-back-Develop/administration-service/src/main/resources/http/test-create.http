@@ -1,0 +1,51 @@
+POST http://localhost:8081/api/helper/test
+Content-Type: application/json
+
+{
+  "name": "Example Test",
+  "description": "This is an example test",
+  "imageUrl": "https://example.com/image.jpg",
+  "artDirection": "Example art direction",
+  "maxBall": 100,
+  "questions": [
+    {
+      "type": "TEXT",
+      "difficultyLevel": "LITE",
+      "questionText": "Example text question",
+      "options": [
+        {
+          "text": "Option 1",
+          "correct": true
+        },
+        {
+          "text": "Option 2",
+          "correct": false
+        },
+        {
+          "text": "Option 3",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "VIDEO_MUSIC",
+      "difficultyLevel": "INTERMEDIATE",
+      "questionText": "Example video/music question",
+      "options": [
+        {
+          "text": "Option A",
+          "correct": true
+        },
+        {
+          "text": "Option B",
+          "correct": false
+        },
+        {
+          "text": "Option C",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}
+

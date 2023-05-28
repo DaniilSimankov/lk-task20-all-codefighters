@@ -1,0 +1,50 @@
+GET http://localhost:8080/api/school
+
+###
+
+GET localhost:8080//api/school/6472736e9576a47bcd77af5c
+
+###
+
+GET localhost:8080//api/school/county?value=ЦАО
+
+###
+
+GET localhost:8080//api/school/district?value=Хамовники%20район
+
+###
+
+GET localhost:8080//api/school/artDirection?value=art
+
+###
+
+GET localhost:8080//api/school/subDirection?value=Акварель&value=Масло
+
+###
+
+GET localhost:8080//api/school/coordinate?value=55.740686,%2037.590509
+
+###
+
+GET localhost:8080//api/school/name?value=школа
+
+###
+
+GET localhost:8080//api/school/filter?age=KID&age=OLD&formOfTraining=FACE_TO_FACE&formOfTraining=DISTANCE
+
+###
+
+
+POST localhost:8080//api/school/6472736e9576a47bcd77af5c/reviews
+Content-Type: application/json
+
+{
+  "name": "Katya",
+  "studentId": "id6",
+  "score": 4,
+  "reviewText": "Очень cool, лул 5!"
+}
+
+###
+
+

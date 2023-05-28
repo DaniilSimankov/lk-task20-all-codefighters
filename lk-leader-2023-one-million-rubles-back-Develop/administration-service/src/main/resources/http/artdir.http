@@ -1,0 +1,5 @@
+GET localhost:8083/api/art-direction
+
+###
+
+GET localhost:8083/api/art-direction/name?abbr=music

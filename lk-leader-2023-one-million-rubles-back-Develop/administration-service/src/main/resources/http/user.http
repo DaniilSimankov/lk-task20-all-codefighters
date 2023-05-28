@@ -1,0 +1,21 @@
+POST http://localhost:8080/api/helper/user/create
+Content-Type: application/json
+
+{
+  "firstName": "Danil",
+  "secondName": "Simankov",
+  "age": "21",
+  "photoUrl": "https://example.com/photo.jpg",
+  "email": "danil@example.com",
+  "phone": "+899999",
+  "typeOfReg": "registration_VK",
+  "VKAuthAccessToken": "vk_access_token",
+  "priorityList": [],
+  "mineAchievementsIds": [],
+  "xp": 0,
+  "lvl": 0,
+  "xpForNextLvl": 0,
+  "coins": 0,
+  "boughtCoursesIds": [],
+  "friendsIds": []
+}
